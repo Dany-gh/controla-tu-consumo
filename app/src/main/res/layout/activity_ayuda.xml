@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/img_enre"
+    android:orientation="vertical"
+    tools:context=".AyudaActivity">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/imgFactura">
+
+                <ImageView
+                    android:id="@+id/factura"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/factura" />
+
+                <TextView
+                    android:id="@+id/tituloAyuda"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cálculo parcial aproximado en base al consumo de KWh"
+                    android:layout_marginTop="10dp"
+                    android:textSize="24sp" />
+
+
+                <TextView
+                    android:id="@+id/descripcionAyuda"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="De acuerdo a los datos proporcionado en la factura de ECSapem, presentada anteriormente, se puede observar
+que están marcados con contornos de color rojo los datos que necesitamos.
+En primer lugar tenemos, Est.Actual, que nos indica el estado (numeración) que el medidor tenía al momento de tomar
+la ultima lectura facturada.
+En segundo lugar tenemos, Actividad: T1 - Residencial, esto significa que:
+La tarifa T1 es donde se encuentra la mayoria de los usuarios de la provincia y se subdivide en:
+T1-R ; T1-G ; T1-AP(Alumbrado Público) ; T1SNacional (Subsidio del Gobierno de la Nación)
+T1-R -> Usuarios Residenciales
+T1-G -> Usuarios Comerciales
+Por último, tenemos que acceder al medidor del domicilio o comercio y verificar el número(KWh).
+Con estos tres datos podemos calcular el costo parcial aproximado (no tiene en cuenta tarifa reducida por ahorro ni tarifa social)
+de consumo de energía, con el objetivo de que al momento de recibir nuestra factura tengamos una idea aproximada del costo a pagar. Además
+si notamos un exceso en nuestro cálculo, tenemos la posibilidad de realizar los reclamos pertinentes."
+                    android:textSize="14sp"
+                    android:layout_weight="1"
+                   />
+
+                <TextView
+                    android:id="@+id/linea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ante cualquier duda, comuníquese a la línea gratuita 0800-777-0119"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>

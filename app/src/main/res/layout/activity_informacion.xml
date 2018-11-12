@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/img_enre"
+    android:orientation="vertical"
+    tools:context=".InformacionActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/SubInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sabias que .."
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/info"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginStart="4dp"
+                android:text="Se puede conseguir hasta un 60% de ahorro de energía con un adecuado aislamiento en techos y
+muros. Instalando toldos, aleros o persianas en las ventanas donde da el sol, reducís aún más el uso del aire
+acondicionado en verano. La tecnología Inverter permite al equipo variar su frecuencia y regular el ciclo eléctrico reduciendo el
+consumo de energía hasta un 60%. Esto hace que se eviten los picos de consumo que se generan
+cuando el compresor arranca, alcanzando mayores niveles de confort ya que mantiene la
+temperatura del ambiente." />
+
+            <TextView
+                android:id="@+id/SubInfo1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Consejos Practicos"
+                android:textSize="22sp"/>
+
+
+            <TextView
+                android:id="@+id/info1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="En verano, al usar el aire acondicionado ajustar el termostato a 24 °C porque los ambientes no se
+enfriarán más rápido aunque bajemos más la temperatura. Además será un gasto innecesario de
+energía. Cada grado de diferencia supone un ahorro de un 8% de energía. En invierno, en la mayor parte de las zonas climáticas del país, ajustar la temperatura a 20°C es
+suficiente para mantener el ambiente en condiciones confortables. Bajar el termostato en 1°C puede
+generar un ahorro del 10% al 20% del consumo en calefacción. En determinados lugares, un ventilador, preferentemente de techo, puede ser suficiente para
+mantener un adecuado confort. Estos producen una sensación de descenso de la temperatura de
+entre 3 y 5°C.
+Limpiar los filtros cada temporada, cuando están sucios el equipo debe funcionar por más tiempo
+para obtener el mismo resultado que con los filtros limpios.
+La altura recomendada para colocar un acondicionador de aire es de 1.80 a 2 metros, porque el aire
+caliente sube y desplaza al aire frío, que tiende a bajar.
+La posición de ventilación permite ahorrar energía."
+                android:textSize="14sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="En los siguientes Links podrá obtener la siguiente información:"
+                android:textSize="22sp"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/tablaConsumos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="   TABLA DE CONSUMOS DE ARTEFACTOS ELÉCTRICOS "
+                android:textColor="@android:color/holo_red_dark"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/leer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" COMO LEER SU FACTURA "
+                android:textColor="@android:color/holo_red_dark"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tener en Cuenta"
+                android:textSize="22sp"
+                android:layout_marginTop="15dp"/>
+
+            <ImageView
+                android:id="@+id/led"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:src="@mipmap/led1"/>
+
+            <TextView
+                android:id="@+id/masinfo"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Para mayor información ingresar a la página web www.enre.catamarca.gob.ar"
+                android:textColor="@android:color/holo_red_dark"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
