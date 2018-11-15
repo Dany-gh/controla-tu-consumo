@@ -10,17 +10,21 @@
 
     <TextView
         android:id="@+id/usuario"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:layout_weight="0.1"
         android:text="USUARIO:"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        android:textSize="17dp"
+        android:textStyle="bold" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.2"
+        android:layout_weight="0.1"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
@@ -29,6 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" Residencial "
+            android:textSize="17dp"
             android:textColor="@android:color/black" />
 
         <RadioButton
@@ -36,57 +41,131 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Comercial / Industrial"
+            android:textSize="17dp"
             android:textColor="@android:color/black" />
     </RadioGroup>
 
 
     <TextView
         android:id="@+id/anterior"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:text="Ingrese el Valor del Estado Actual que figura en la última factura recibida:"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        android:textSize="17dp"
+        android:textStyle="bold" />
 
-
-    <EditText
-        android:id="@+id/ingreso1"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0.3"
-        android:ems="10"
-        android:hint="Ingrese"
-        android:inputType="number"
-        android:text="" />
+        android:layout_gravity="left"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/ingreso1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.1"
+            android:background="@android:color/holo_blue_bright"
+            android:ems="5"
+            android:gravity="center"
+            android:inputType="number"
+            android:textSize="30sp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/kwh1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="[KWh]"
+            android:textColor="@android:color/black"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="3dp"
+            android:textStyle="bold|italic" />
+        <TextView
+            android:id="@+id/referenciaEstado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="    REFERENCIA \n ESTADO ACTUAL"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="10dp"
+            android:layout_marginLeft="14dp"
+            android:textStyle="bold|italic" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/actual"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
         android:text="Ingrese el Valor que figura en el medidor:"
-        android:textColor="@android:color/black" />
-
-    <EditText
-        android:id="@+id/ingreso"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.3"
-        android:ems="10"
-        android:hint="Ingrese"
-        android:inputType="number"
-        android:text="" />
-
-    <TextView
-        android:id="@+id/costoParcial"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.1"
-        android:text="Calcular costo parcial [$]"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        android:textSize="17dp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/ingreso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.1"
+            android:background="@android:color/holo_blue_bright"
+            android:ems="5"
+            android:gravity="center"
+            android:inputType="number"
+            android:textSize="30sp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/kwh2"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:text="[KWh]"
+            android:textColor="@android:color/black"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="3dp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/referenciaMedidor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="    REFERENCIA \n      MEDIDOR"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="10dp"
+            android:layout_marginLeft="14dp"
+            android:textStyle="bold|italic" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/costoParcial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_weight="0.1"
+        android:text="Incluye Cargo Fijo, Cargo Variable e Impuestos"
+        android:textColor="@android:color/black" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <Button
@@ -101,23 +180,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Guardar" />
-
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="3dp"
+        android:layout_height="60dp"
         android:layout_gravity="center"
         android:layout_weight="1"
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/resultadokwh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="calcular"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
             android:id="@+id/resultado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:onClick="calcular"
-            android:textSize="30sp"
+            android:textSize="25sp"
             android:textStyle="bold" />
     </LinearLayout>
+
 
 </LinearLayout>

@@ -2,8 +2,10 @@ package com.example.maria.prueba;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -14,10 +16,10 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     //Declaracion de variables
-    TextView textView, textView1, textView2, textView3, textView4;
+    TextView textView, textView1, textView2, textView3, textView4,textView5, textView6, textView7;
     EditText editText, editText1, Eid;
     RadioButton radioButton, radioButton1;
     Button button, btguardar;
@@ -35,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
         textView2 = (TextView) findViewById(R.id.anterior);
         textView3 = (TextView) findViewById(R.id.costoParcial);
         textView4 = (TextView) findViewById(R.id.resultado);
+        textView5 = (TextView)findViewById(R.id.resultadokwh);
+        textView6 = (TextView)findViewById(R.id.referenciaEstado);
+        textView7 = (TextView) findViewById(R.id.referenciaMedidor);
 
         radioButton = (RadioButton) findViewById(R.id.radioButton);
         radioButton1 = (RadioButton) findViewById(R.id.radioButton1);
@@ -55,6 +60,36 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), mensaje, Toast.LENGTH_SHORT).show();
             }
         });
+
+
+        //Evento que muestra un alerta con la imagen de la factura en la actividad principal
+        textView6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final AlertDialog.Builder alerta = new AlertDialog.Builder(MainActivity.this);
+                LayoutInflater imagenAlerta = LayoutInflater.from(MainActivity.this);
+                alerta.setView(imagenAlerta.inflate(R.layout.imagen_estado_actual, null));
+
+                AlertDialog titulo = alerta.create();
+                titulo.setTitle("Factura");
+                titulo.show();
+            }
+        });
+
+        //Evento que muestra un alerta con la imagen del medidor en la actividad principal
+        textView7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final AlertDialog.Builder alerta = new AlertDialog.Builder(MainActivity.this);
+                LayoutInflater imagenAlerta = LayoutInflater.from(MainActivity.this);
+                alerta.setView(imagenAlerta.inflate(R.layout.imagen_medidor, null));
+
+                AlertDialog titulo = alerta.create();
+                titulo.setTitle("Medidor");
+                titulo.show();
+            }
+        });
+
 
     }
 
@@ -84,12 +119,13 @@ public class MainActivity extends AppCompatActivity {
                     //Pasamos el resultado obtenido anteriormente a String
                     String resultado_final = String.valueOf(resultado);
                     //Mostramos el resultado obtenido
-                    //textView4.setText("$" + form.format(resultado_final));
-                     textView4.setText("$" + resultado_final);
+                     textView4.setText("Importe Estimado: $ " + resultado_final);
+                     textView5.setText("KWh Consumidos: " + resul_parcial);
                     //Leyenda de aclaración
                     Toast.makeText(getApplicationContext(), "Cálculo según cuadro tarifario vigente Res/", Toast.LENGTH_LONG).show();
                 } else {
-                    textView4.setText("$" + 0);
+                    textView4.setText("Importe Estimado: $ ");
+                    textView5.setText("Kwh consumidos: ");
                     //En caso de ingresar incorrectamente los datos, mostramos la leyenda de error
                     Toast.makeText(getApplicationContext(), "Error: Ingrese Nuevamente los datos", Toast.LENGTH_LONG).show();
                 }
@@ -104,10 +140,12 @@ public class MainActivity extends AppCompatActivity {
                     String resultado_final = String.valueOf(resultado);
 
                     //textView4.setText("$" + form.format(resultado_final));
-                    textView4.setText("$" + resultado_final);
+                    textView4.setText("Importe Estimado: $ " + resultado_final);
+                    textView5.setText("KWh Consumidos: " + resul_parcial);
                     Toast.makeText(getApplicationContext(), "Cálculo según cuadro tarifario vigente Res/", Toast.LENGTH_LONG).show();
                 } else {
-                    textView4.setText("$" + 0);
+                    textView4.setText("Importe Estimado: $ ");
+                    textView5.setText("Kwh consumidos: ");
                     Toast.makeText(getApplicationContext(), "ERROR: Ingrese Nuevamente los Datos", Toast.LENGTH_LONG).show();
                 }
             }
