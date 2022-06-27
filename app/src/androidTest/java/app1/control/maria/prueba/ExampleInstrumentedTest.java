@@ -1,4 +1,4 @@
-package com.example.maria.prueba;
+package apps.control.maria.prueba;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

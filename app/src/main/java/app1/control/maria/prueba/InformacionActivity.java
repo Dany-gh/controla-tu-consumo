@@ -1,4 +1,4 @@
-package com.example.maria.prueba;
+package apps.control.maria.prueba;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -6,8 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-
-import java.net.URL;
 
 
 public class InformacionActivity extends AppCompatActivity implements View.OnClickListener {

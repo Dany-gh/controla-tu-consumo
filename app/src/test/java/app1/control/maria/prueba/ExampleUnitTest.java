@@ -1,4 +1,4 @@
-package com.example.maria.prueba;
+package apps.control.maria.prueba;
 
 import org.junit.Test;
 
