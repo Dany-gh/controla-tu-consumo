@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.maria.prueba">
+    package="app1.control.maria.prueba">
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/logo_enre2"
+        android:icon="@mipmap/logo_princ"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"
+                  android:screenOrientation="portrait">
+        </activity>
         <activity
             android:name=".SplashActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,11 +24,16 @@
         </activity>
         <activity
             android:name=".InformacionActivity"
-            android:label="Información" />
-        <activity android:name=".SalirActivity" />
+            android:label="Información">
+        </activity>
+        <activity
+            android:name=".MisConsumosActivity"
+            android:label="Mis Consumos">
+        </activity>
         <activity
             android:name=".AyudaActivity"
-            android:label="Ayuda" />
+            android:label="Ayuda">
+        </activity>
     </application>
 
 </manifest>

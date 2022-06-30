@@ -1,4 +1,4 @@
-package apps.control.maria.prueba;
+package app1.control.maria.prueba;
 
 import android.content.Intent;
 import android.os.Handler;

@@ -1,4 +1,4 @@
-package apps.control.maria.prueba;
+package app1.control.maria.prueba;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

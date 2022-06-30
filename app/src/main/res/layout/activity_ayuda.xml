@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@mipmap/img_enre"
     android:orientation="vertical"
-    tools:context=".AyudaActivity">
+    tools:context="app1.control.maria.prueba.AyudaActivity">
 
 
         <ScrollView
@@ -28,32 +28,31 @@
 
                 <TextView
                     android:id="@+id/tituloAyuda"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cálculo parcial aproximado en base al consumo de KWh"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:textSize="24sp" />
-
+                    android:layout_marginRight="5dp"
+                    android:gravity="center"
+                    android:text="Cálculo Parcial Aproximado en Base al Consumo de KWH"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold|italic" />
 
                 <TextView
                     android:id="@+id/descripcionAyuda"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="De acuerdo a los datos proporcionado en la factura de ECSapem, presentada anteriormente, se puede observar
-que están marcados con contornos de color rojo los datos que necesitamos.
-En primer lugar tenemos, Est.Actual, que nos indica el estado (numeración) que el medidor tenía al momento de tomar
-la ultima lectura facturada.
-En segundo lugar tenemos, Actividad: T1 - Residencial, esto significa que:
-La tarifa T1 es donde se encuentra la mayoria de los usuarios de la provincia y se subdivide en:
-T1-R ; T1-G ; T1-AP(Alumbrado Público) ; T1SNacional (Subsidio del Gobierno de la Nación)
-T1-R -> Usuarios Residenciales
-T1-G -> Usuarios Comerciales
-Por último, tenemos que acceder al medidor del domicilio o comercio y verificar el número(KWh).
-Con estos tres datos podemos calcular el costo parcial aproximado (no tiene en cuenta tarifa reducida por ahorro ni tarifa social)
-de consumo de energía, con el objetivo de que al momento de recibir nuestra factura tengamos una idea aproximada del costo a pagar. Además
-si notamos un exceso en nuestro cálculo, tenemos la posibilidad de realizar los reclamos pertinentes."
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="De acuerdo a los datos proporcionados en la factura de ECSapem (Energía Catamarca), presentada anteriormente, se puede observar
+que están marcados con contornos de color rojo los datos que necesitamos.\n En primer lugar tenemos, Est.Actual, que nos indica el estado (numeración) que el medidor tenía al momento de tomar la ultima lectura facturada.
+ En segundo lugar tenemos, Actividad: T1 - Residencial, esto significa que:\n La tarifa T1 es donde se encuentra la mayoria de los usuarios de la provincia y se subdivide en:\nT1-R   -   T1-G   -   T1-AP(Alumbrado Público)   -   T1SNacional (Subsidio del Gobierno de la Nación)\n\nT1-R -> Usuarios Residenciales \nT1-G -> Usuarios Comerciales\n
+\n Por último, tenemos que acceder al medidor del domicilio o comercio y verificar el número(KWh).
+Con estos tres datos podemos calcular el costo parcial aproximado (no tiene en cuenta tarifa reducida por ahorro ni tarifa social) de consumo de energía, con el objetivo de que al momento de recibir nuestra factura, tengamos una idea aproximada del costo a pagar. Además si notamos un exceso en nuestro cálculo, tenemos la posibilidad de realizar los reclamos pertinentes.\n En el menú ubicado en la parte superior derecha tenemos la opción Mis Consumos, lugar donde se alojarán nuestros consumos previamente guardados con el número de KWH, costo estimado y fecha, tambíen tenemos la opción de borrar los registros, manteniendo presionado el mismo nos aparecerá en la parte superior un icono con el que podemos realizar la acción antes mencionada. \n\nTENER EN CUENTA\n
+ Tenemos la opción de calcular el consumo parcial aproximado por día, tomando como primer valor (que anteriormente era el ESTADO ACTUAL del medidor) al último registro en KWH calculado más el ESTADO ACTUAL, y en segundo lugar tomar el VALOR ACTUAL del MEDIDOR.
+De esta manera podremos controlar el consumo diario."
                     android:textSize="14sp"
-                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
                    />
 
                 <TextView

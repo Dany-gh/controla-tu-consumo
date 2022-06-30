@@ -1,4 +1,4 @@
-package apps.control.maria.prueba;
+package app1.control.maria.prueba;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -20,12 +20,11 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity{
 
-    //Declaracion de variables
+    //Declaracion de variables---
     TextView textView, textView1, textView2, textView3,
             textView6, textView7;
     EditText editText, editText1, resultadoKWH,resultadoParcial;
@@ -95,8 +94,8 @@ public class MainActivity extends AppCompatActivity{
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void guardar(View v){
 
-        String resul = resultadoParcial.getText().toString();
-        String resulKWH = resultadoKWH.getText().toString();
+        String resul = resultadoParcial.getText().toString(); //importe en pesos
+        String resulKWH = resultadoKWH.getText().toString(); //kwh
 
         if( resul != null ){
              BaseHelper basehelper = new BaseHelper(this, "CONSUMO",null,6);
@@ -132,8 +131,8 @@ public class MainActivity extends AppCompatActivity{
          //if(radioButton.isChecked() == true || radioButton1.isChecked() == true) {
         try {
              //Tomamos los valores obtenidos en los editText
-             String valor_string = editText.getText().toString();
-             String valor1_string = editText1.getText().toString();
+             String valor_string = editText.getText().toString(); //kwh inicial
+             String valor1_string = editText1.getText().toString(); //kwh final
 
              //Pasamos a enteros los valores ingresados
              int valor_int = Integer.parseInt(valor_string);
@@ -142,11 +141,11 @@ public class MainActivity extends AppCompatActivity{
 
              //Si pertenece a un Cliente Residencial
              if (radioButton.isChecked() == true) {
-
-                 //Realizamos la diferencia entre el valor actual(valor_int) y el ultimo facturado(valor_int1)
-                 int resul_parcial = valor_int - valor_int1;
+                 //radioButton=Residencial
+                 //Realizamos la diferencia entre el valor actual(valor_int) y el ultimo facturado (valor_int1)
+                 int resul_parcial = (valor_int - valor_int1); //[kWh] consumidos
                  //Realizamos la operación para calcular el costo total
-                 double resultado = resul_parcial * 3.50;
+                 double resultado = (resul_parcial * 6.8); //[kWh] * [$/kWh]=[$]
 
                  if (resultado > 0) {
                      //Pasamos los resultados obtenidos anteriormente a String
@@ -156,7 +155,7 @@ public class MainActivity extends AppCompatActivity{
                      resultadoKWH.setText(resul_finalKWH);
                      resultadoParcial.setText(" $ " + resultado_final);
                      //Leyenda de aclaración
-                     Toast.makeText(getApplicationContext(), "Cálculo según cuadro tarifario vigente Res/", Toast.LENGTH_SHORT).show();
+                     Toast.makeText(getApplicationContext(), "No Incluye Impuestos, Ni Cargos Fijos", Toast.LENGTH_SHORT).show();
                  } else {
                      resultadoKWH.setText(" ");
                      resultadoParcial.setText(" ");
@@ -168,14 +167,14 @@ public class MainActivity extends AppCompatActivity{
              } else if (radioButton1.isChecked() == true) {
 
                  int resul_parcial = valor_int - valor_int1;
-                 double resultado = resul_parcial * 3.90;
+                 double resultado = (resul_parcial * 8.9);
 
                  if (resultado > 0) {
                      String resultado_final = String.format("%.2f", resultado);
                      String resul_finalKWH = Integer.toString(resul_parcial);
                      resultadoKWH.setText(resul_finalKWH);
                      resultadoParcial.setText(" $ " + resultado_final);
-                     Toast.makeText(getApplicationContext(), "Cálculo según cuadro tarifario vigente Res/", Toast.LENGTH_SHORT).show();
+                     Toast.makeText(getApplicationContext(), "No Incluye Impuestos Ni Cargos Fijos", Toast.LENGTH_SHORT).show();
 
                      } else {
                      resultadoKWH.setText(" "
@@ -229,5 +228,4 @@ public class MainActivity extends AppCompatActivity{
                  return super.onOptionsItemSelected(item);
         }
     }
-
 }
